@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HolaMundoCore.Models;
+using HolaMundoCore.Services;
 
 namespace HolaMundoCore.Controllers
 {
@@ -12,29 +13,11 @@ namespace HolaMundoCore.Controllers
     {
         public IActionResult Index()
         {
-            List<Pais> pais = new List<Pais>()
-            {
-                new Pais
-                {
-                    Id = 1,
-                    Nombre= "Venezuela"
-                },
+            /*PaisRepositorioEnMemoria paisRepo = new PaisRepositorioEnMemoria();
 
-                new Pais
-                {
-                    Id = 2,
-                    Nombre= "Colombia"
-                },
+            paisRepo.obtenerTodos();*/
 
-                new Pais
-                {
-                    Id = 3,
-                    Nombre= "Mexico"
-                },
-            };
-            
-
-            return View(pais);
+            return View();
         }
 
         public IActionResult About()
