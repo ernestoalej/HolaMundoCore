@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace HolaMundoCore.Services
 {
-    public class PaisRepositorioEnMemoria
+    public class PaisRepositorioEnMemoria:IRepositorioPais
     {
 
-
-        public List<Pais> obtenerTodos()
+        public List<Pais> ObtenerTodos()
         {
             List<Pais> pais = new List<Pais>()
             {
@@ -31,10 +30,16 @@ namespace HolaMundoCore.Services
                     Id = 3,
                     Nombre= "Mexico"
                 },
+                 new Pais
+                {
+                    Id = 4,
+                    Nombre= "Italia"
+                },
             };
 
 
             return pais;
         }
+      
     }
 }

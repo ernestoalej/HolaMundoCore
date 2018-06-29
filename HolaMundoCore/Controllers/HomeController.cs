@@ -11,13 +11,22 @@ namespace HolaMundoCore.Controllers
 {
     public class HomeController : Controller
     {
+        public IRepositorioPais Repositorio { get; }
+
+        public HomeController(IRepositorioPais repositorio)
+        {
+            Repositorio = repositorio;
+        }
+
         public IActionResult Index()
         {
             /*PaisRepositorioEnMemoria paisRepo = new PaisRepositorioEnMemoria();
 
             paisRepo.obtenerTodos();*/
 
-            return View();
+           List<Pais> Paises = Repositorio.ObtenerTodos();
+
+            return View(Paises);
         }
 
         public IActionResult About()

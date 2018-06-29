@@ -36,6 +36,7 @@ namespace HolaMundoCore
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddScoped<IRepositorioPais, PaisRepositorioEnMemoria>();
             services.AddMvc();
         }
 
